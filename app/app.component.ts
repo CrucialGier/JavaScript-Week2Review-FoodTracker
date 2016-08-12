@@ -19,7 +19,7 @@ export class AppComponent {
    this.allFood = [
      new Food("Tabouli Salad", "Healthy and clean", 120),
      new Food("Coffee", "A big one", 80),
-     new Food("Super Star sandwitch", "And i was doing so well... =P", 850)
+     new Food("Super Star Sandwitch", "And i was doing so well... =P", 850)
    ]
  }
 }
