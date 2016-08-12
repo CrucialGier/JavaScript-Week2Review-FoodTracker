@@ -5,14 +5,15 @@ import { Food } from './food.model';
   selector: 'food-edit',
   inputs: ['food'],
   template: `
-    <div>
-      <h3
-      (click)='detailClicked("name")'>{{ food.name }}</h3>
-      <input [(ngModel)]='food.name' *ngIf='selectedDetail === "name"'/>
-      <p (click)='detailClicked("details")'>{{ food.details }}</p>
-      <input [(ngModel)]='food.details' *ngIf='selectedDetail === "details"'/>
-      <p (click)='detailClicked("calories")'>{{ food.calories }}</p>
-      <input [(ngModel)]='food.calories' *ngIf='selectedDetail === "calories"'/>
+    <div class="editFood">
+    <p id="editNotice">Click a detail to Edit</p>
+      <h1
+      (click)='detailClicked("name")'>{{ food.name }}</h1>
+      <input class="editInput" [(ngModel)]='food.name' *ngIf='selectedDetail === "name"'/>
+      <h2 (click)='detailClicked("details")'><span class='detailHeader'>Note: </span>{{ food.details }}</h2>
+      <input class="editInput" [(ngModel)]='food.details' *ngIf='selectedDetail === "details"'/>
+      <h2 (click)='detailClicked("calories")'><span class='detailHeader'>Calories: </span>{{ food.calories }}</h2>
+      <input class="editInput" [(ngModel)]='food.calories' *ngIf='selectedDetail === "calories"'/>
     </div>
   `
 })

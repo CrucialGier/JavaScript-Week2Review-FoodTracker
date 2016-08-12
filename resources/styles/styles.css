@@ -1,0 +1,30 @@
+.editFood {
+  border: 4px solid black;
+  width: 60%;
+  border-radius: 20px;
+  height: 500px;
+}
+
+.editFood h1 {
+  margin-left: 30px;
+  margin-top: -5px;
+}
+
+.editFood h2 {
+  font-weight: normal;
+  margin-left: 60px;
+}
+
+.detailHeader {
+  font-weight: bold;
+}
+
+.editInput {
+  font-size: 20px;
+  margin-left: 10%;
+}
+
+#editNotice {
+  margin-left: 20px;
+  margin-top: 10px;
+}
