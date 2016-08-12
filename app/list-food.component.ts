@@ -9,18 +9,25 @@ import { NewFoodComponent } from './new-food.component';
   inputs: ['allFood'],
   directives: [FoodDisplayComponent, FoodEditComponent, NewFoodComponent],
   template: `
-    <p id="createNotice" (click)='creatingNewFood = true'>Add New Food</p>
-    <food-display
-    *ngFor='#foodItem of allFood'
-      [food]='foodItem'
-      (click)='foodItemClicked(foodItem)'
-      [class.selected]='foodItem === selectedFood'>
-    </food-display>
-    <new-food *ngIf='creatingNewFood === true' (onNewFoodSubmit)='addNewFood($event)'></new-food>
-    <food-edit
-      *ngIf='selectedFood'
-      [food]='selectedFood'>
-    </food-edit>
+    <div class="foodList">
+      <p id="createNotice" (click)='creatingNewFood = true'>Add New Food</p>
+      <div class="row">
+        <div class="col-md-4">
+          <food-display
+          *ngFor='#foodItem of allFood'
+            [food]='foodItem'
+            (click)='foodItemClicked(foodItem)'
+            [class.selected]='foodItem === selectedFood'>
+          </food-display>
+        </div>
+        <new-food class="col-md-7" *ngIf='creatingNewFood === true' (onNewFoodSubmit)='addNewFood($event)'>
+        </new-food>
+      </div>
+      <food-edit
+        *ngIf='selectedFood'
+        [food]='selectedFood'>
+      </food-edit>
+    </div>
   `
 })
 

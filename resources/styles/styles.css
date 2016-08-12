@@ -3,6 +3,8 @@
   width: 60%;
   border-radius: 20px;
   height: 500px;
+  margin-left: 20%;
+  margin-top: 5%;
 }
 
 .editFood h1 {
@@ -27,4 +29,24 @@
 #editNotice {
   margin-left: 20px;
   margin-top: 10px;
+}
+
+.newFood {
+  border: 4px solid purple;
+  border-radius: 20px;
+  height: 150px;
+}
+
+#newFoodNotice {
+  color: purple;
+}
+
+.newFood h2 {
+  font-size: 22px;
+  margin-left: 40px;
+  padding-top: 3%;
+}
+
+.newFood-form {
+  margin-left: 5%;
 }
