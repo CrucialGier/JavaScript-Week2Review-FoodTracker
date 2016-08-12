@@ -8,6 +8,10 @@
   font-size: 30px;
 }
 
+.foodListItem:hover {
+  cursor: pointer;
+}
+
 .allFoodContainer {
   margin-top: 20px;
 }
@@ -30,6 +34,15 @@
   font-weight: normal;
   margin-left: 60px;
 }
+
+.editFood h1:hover {
+  cursor: pointer;
+}
+
+.editFood h2:hover {
+  cursor: pointer;
+}
+
 
 .detailHeader {
   font-weight: bold;
