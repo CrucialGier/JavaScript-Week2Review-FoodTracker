@@ -12,16 +12,16 @@ import { CaloriePipe } from './calorie.pipe';
   pipes: [CaloriePipe],
   template: `
     <div class="foodList">
-      <p id="createNotice" (click)='creatingNewFood = true'>Add New Food</p>
-      <select (change)="onChange($event.target.value)">
+      <p id="newFoodNotice" (click)='creatingNewFood = true'>Add New Food</p>
+      <label for="calorieSelector">Display Shows: </label>
+      <select id="calorieSelector" (change)="onChange($event.target.value)">
         <option value="high">High Calorie Food Items</option>
         <option value="low">Low Calorie Food Items</option>
         <option value="all" selected="selected">All Food Items</option>
       </select>
-      <div class="row">
+      <div class="row allFoodContainer">
         <div class="col-md-4">
-          <food-display
-          *ngFor='#foodItem of allFood | caloriePipe:calorieLevel' 
+          <food-display *ngFor='#foodItem of allFood | caloriePipe:calorieLevel'
             [food]='foodItem'
             (click)='foodItemClicked(foodItem)'
             [class.selected]='foodItem === selectedFood'>
@@ -44,7 +44,13 @@ export class FoodListComponent {
   public creatingNewFood: boolean = false;
   public calorieLevel: string;
   foodItemClicked(foodItem: Food) {
-    this.selectedFood = foodItem;
+    if (this.selectedFood === undefined) {
+      this.selectedFood = foodItem;
+    } else if (foodItem.name === this.selectedFood.name) {
+      this.selectedFood = undefined;
+    } else {
+      this.selectedFood = foodItem;
+    }
   }
   addNewFood(foodToAdd: Food) {
     this.allFood.push(foodToAdd);

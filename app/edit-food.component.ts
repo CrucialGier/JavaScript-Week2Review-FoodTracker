@@ -22,6 +22,12 @@ export class FoodEditComponent {
   public food: Food;
   public selectedDetail: string;
   detailClicked(clickedDetail: string) {
-    this.selectedDetail = clickedDetail;
+    if (this.selectedDetail === undefined) {
+      this.selectedDetail = clickedDetail;
+    } else if (clickedDetail === this.selectedDetail) {
+      this.selectedDetail = undefined;
+    } else {
+      this.selectedDetail = clickedDetail;
+    }
   }
 }
